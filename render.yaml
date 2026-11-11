@@ -1,0 +1,21 @@
+# Exported from Render on 2026-11-11T21:51:41Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: Scramjet-App1
+      runtime: docker
+      repo: https://github.com/yoshidude6767/Scramjet-App1
+      plan: free
+      envVars:
+      - key: WISP_DNS_SERVERS
+        sync: false
+      - key: WISP_ENABLED
+        sync: false
+      region: oregon
+      dockerContext: .
+      dockerfilePath: ./Dockerfile
+      autoDeployTrigger: commit
